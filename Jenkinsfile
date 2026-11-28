@@ -31,7 +31,10 @@ pipeline {
 
         stage('Execute API Tests') {
             steps {
-                bat 'python -m robot test_2.robot'
+                 bat '''
+                cd /d "%WORKSPACE%\Automation_Project\Simulator"
+               python -m robot test_2.robot
+                '''
             }
         }
 
