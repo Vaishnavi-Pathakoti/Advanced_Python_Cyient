@@ -3,3 +3,6 @@ requests
 numpy
 pandas
 matplotlib
+pathlib
+robotframework
+robotframework-requests

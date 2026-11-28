@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.5.1 (Python 3.12.10 on win32)" generated="2026-11-28T18:47:30.144073" rpa="false" schemaversion="5">
+<suite id="s1" name="Login" source="C:\Users\Administrator\Documents\Python_Training\Robot_GUI_Project\TestCases\login.robot">
+<test id="s1-t1" name="Verify Login Functionality" line="9">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-11-28T18:47:30.570460" level="INFO">Opening browser 'Chrome' to base url 'http://www.amazon.com/'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-11-28T18:47:30.570460" elapsed="4.617772"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-11-28T18:47:35.188232" elapsed="0.034004"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-11-28T18:47:45.224233" level="INFO">Slept 10 seconds.</msg>
+<arg>10s</arg>
+<doc>Pauses execution for the given time.</doc>
+<status status="PASS" start="2026-11-28T18:47:35.222236" elapsed="10.002235"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-11-28T18:47:45.225234" level="INFO">Typing text 'Laptop' into text field 'id=twotabsearchtextbox'.</msg>
+<arg>id=twotabsearchtextbox</arg>
+<arg>Laptop</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-11-28T18:47:45.224471" elapsed="0.119882"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-11-28T18:47:55.346055" level="INFO">Slept 10 seconds.</msg>
+<arg>10s</arg>
+<doc>Pauses execution for the given time.</doc>
+<status status="PASS" start="2026-11-28T18:47:45.345353" elapsed="10.000702"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-11-28T18:47:55.346055" level="INFO">Clicking element 'id=nav-search-submit-button'.</msg>
+<arg>id=nav-search-submit-button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-11-28T18:47:55.346055" elapsed="0.059653"/>
+</kw>
+<status status="PASS" start="2026-11-28T18:47:30.570460" elapsed="24.836252"/>
+</test>
+<status status="PASS" start="2026-11-28T18:47:30.144073" elapsed="25.262639"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Login" id="s1" pass="1" fail="0" skip="0">Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

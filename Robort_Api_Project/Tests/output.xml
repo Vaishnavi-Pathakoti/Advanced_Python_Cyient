@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.5.1 (Python 3.12.10 on win32)" generated="2026-11-28T19:15:44.190593" rpa="false" schemaversion="5">
+<suite id="s1" name="Get Equipment" source="C:\Users\Administrator\Documents\Python_Training\Robort_Api_Project\Tests\get_equipment.robot">
+<test id="s1-t1" name="TC001_Test Get All Equipment" line="11">
+<kw name="Creat API Session">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2026-11-28T19:15:44.480881" level="INFO">Creating Session using : alias=Equipment_API, url=http://127.0.0.1:5015, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>Equipment_API</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2026-11-28T19:15:44.480881" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-11-28T19:15:44.480881" elapsed="0.000000"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2026-11-28T19:15:44.480881" level="INFO">GET Request : url=http://127.0.0.1:5015/api/equipment 
+ path_url=/api/equipment 
+ headers={'User-Agent': 'python-requests/2.34.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2026-11-28T19:15:44.480881" level="INFO">GET Response : url=http://127.0.0.1:5015/api/equipment 
+ status=200, reason=OK 
+ headers={'Server': 'Werkzeug/3.1.9 Python/3.12.10', 'Date': 'Sat, 28 Nov 2026 06:15:44 GMT', 'Content-Type': 'application/json', 'Content-Length': '227', 'Connection': 'close'} 
+ body=[{"id":101,"name":"Flight control unit","status":"Operational","type":"FCU"},{"id":102,"name":"Navigation system","status":"Operational","type":"NS"},{"id":103,"name":"Remote control Unit","status":"Operational","type":"RCU"}]
+ 
+ </msg>
+<msg time="2026-11-28T19:15:44.480881" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>Equipment_API</arg>
+<arg>/api/equipment</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-11-28T19:15:44.480881" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2026-11-28T19:15:44.480881" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2026-11-28T19:15:44.480881" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${response.json()}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-11-28T19:15:44.490881" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-11-28T19:15:44.480881" elapsed="0.010000"/>
+</test>
+<test id="s1-t2" name="TC002_Test_GET_One" line="17">
+<kw name="Creat API Session">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2026-11-28T19:15:44.490881" level="INFO">Creating Session using : alias=Equipment_API, url=http://127.0.0.1:5015, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>Equipment_API</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2026-11-28T19:15:44.490881" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-11-28T19:15:44.490881" elapsed="0.000000"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2026-11-28T19:15:44.490881" level="INFO">GET Request : url=http://127.0.0.1:5015/api/equipment/101 
+ path_url=/api/equipment/101 
+ headers={'User-Agent': 'python-requests/2.34.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2026-11-28T19:15:44.490881" level="INFO">GET Response : url=http://127.0.0.1:5015/api/equipment/101 
+ status=200, reason=OK 
+ headers={'Server': 'Werkzeug/3.1.9 Python/3.12.10', 'Date': 'Sat, 28 Nov 2026 06:15:44 GMT', 'Content-Type': 'application/json', 'Content-Length': '76', 'Connection': 'close'} 
+ body={"id":101,"name":"Flight control unit","status":"Operational","type":"FCU"}
+ 
+ </msg>
+<msg time="2026-11-28T19:15:44.490881" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>Equipment_API</arg>
+<arg>/api/equipment/101</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-11-28T19:15:44.490881" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2026-11-28T19:15:44.490881" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2026-11-28T19:15:44.490881" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-11-28T19:15:44.497878" level="INFO">${data} = {'id': 101, 'name': 'Flight control unit', 'status': 'Operational', 'type': 'FCU'}</msg>
+<var>${data}</var>
+<arg>${response.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variable.</doc>
+<status status="PASS" start="2026-11-28T19:15:44.490881" elapsed="0.006997"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2026-11-28T19:15:44.497878" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${data}[id]</arg>
+<arg>101</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2026-11-28T19:15:44.497878" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${data}[name]</arg>
+<arg>Flight control unit</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2026-11-28T19:15:44.497878" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${data}[type]</arg>
+<arg>FCU</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2026-11-28T19:15:44.498880" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${data}[status]</arg>
+<arg>Operational</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2026-11-28T19:15:44.498880" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>All Equipment Details: ${data}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-11-28T19:15:44.498880" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-11-28T19:15:44.490881" elapsed="0.009000"/>
+</test>
+<status status="PASS" start="2026-11-28T19:15:44.190593" elapsed="0.309288"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Get Equipment" id="s1" pass="2" fail="0" skip="0">Get Equipment</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
