@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        APP_URL = 'http://127.0.0.1:5001'
+        APP_URL = 'http://127.0.0.1:5015'
     }
 
     stages {
