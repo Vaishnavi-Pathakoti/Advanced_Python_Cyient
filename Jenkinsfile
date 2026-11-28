@@ -22,7 +22,10 @@ pipeline {
 
         stage('Start Flask Application') {
             steps {
-                bat 'start "FlaskApp" /B python app.py'
+                bat '''
+                cd /d "%WORKSPACE%\Automation_Project\Simulator"
+                start "FlaskApp" /B python app.py
+                '''
             }
         }
 
